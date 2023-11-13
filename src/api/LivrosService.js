@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3000"
+const BASE_URL = "http://localhost:6969"
 
 export class LivrosService{
     static getLivros(){
-        return axios.get(BASE_URL+'/livros');
+        return axios.get(BASE_URL+'/busca');
     }
 
     static getLivro(id){
@@ -12,7 +12,7 @@ export class LivrosService{
     }
 
     static createLivro(body){
-        return axios.post(`${BASE_URL}/livros`,body);
+        return axios.post(`${BASE_URL}/cadastro`,body);
     }
 
     static updateLivro(id,body){
