@@ -17,11 +17,11 @@ const LivrosEdicao = () => {
 
   async function editLivro(){
     const body = {
-        id:Number(livro.id),
-        titulo:livro.titulo,
-        num_paginas: Number(livro.num_paginas),
-        isbn: livro.isbn,
-        editora: livro.editora
+      id:Number(livro.id),
+      titulo:livro.titulo,
+      num_paginas: Number(livro.num_paginas),
+      isbn: livro.isbn,
+      editora: livro.editora
       }
     if(livro.id!=undefined && livro.id!='' && livro.titulo!=undefined && livro.titulo!='' && livro.num_paginas!=undefined && livro.num_paginas!='' && livro.isbn !=undefined && livro.isbn !='' && livro.editora !=undefined && livro.editora !=''){
       await LivrosService.updateLivro(Number(livro.id),body)
