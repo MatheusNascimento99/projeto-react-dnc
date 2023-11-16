@@ -11,7 +11,7 @@ const Livros = () => {
 
   async function getLivros(){
     const {data} = await LivrosService.getLivros();
-    setLivros(data)
+    setLivros(data.resposta)
   }
 
   async function deleteLivro(livroId){
@@ -23,7 +23,7 @@ const Livros = () => {
         getLivros()
       })
       .catch(({response:{data,status}})=>{
-        alert(`${status} - ${data.mensagem}`)      
+        alert(`${status} -${data.mensagem}`)      
       });
     }
   }

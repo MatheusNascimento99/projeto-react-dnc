@@ -3,8 +3,8 @@ import axios from "axios";
 const BASE_URL = "http://localhost:6969"
 
 export class LivrosService{
-    static getLivros(){
-        return axios.get(BASE_URL+'/busca');
+    static async getLivros(){
+        return await axios.get(BASE_URL+'/busca');
     }
 
     static getLivro(id){
@@ -19,8 +19,8 @@ export class LivrosService{
         return axios.put(`${BASE_URL}/livros/${id}`,body);
     }
 
-    static deleteLivro(id){
-        return axios.delete(`${BASE_URL}/livros/${id}`);
+    static deleteLivro(livroId){
+        return axios.delete(`${BASE_URL}/apagar/${livroId}`);
     }
     
 }
